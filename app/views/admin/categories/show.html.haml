@@ -1,0 +1,27 @@
+%h1 Category
+
+%p
+  %b Name
+  %br
+  = @category.name
+
+%p
+  %b Title
+  %br
+  = @category.title
+
+%p
+  %b Description
+  %br
+  = @category.description
+
+- if @category.image.exists?
+  %p
+    %b Image
+    %br
+  = image_tag @category.image.url
+
+.form-actions
+  = link_to 'Back', admin_categories_path, class: 'btn'
+  = link_to 'Edit', edit_admin_category_path(@category), class: 'btn'
+  = link_to 'Delete', admin_category_path(@category), method: 'delete', confirm: 'Are you sure?', class: 'btn btn-danger'

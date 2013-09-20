@@ -1,0 +1,87 @@
+.container
+  .row
+    .span12
+      / TODO: else
+      - if @sliders.present?
+        .flexslider
+          %ul.slides
+            - @sliders.each do |slide|
+              %li= image_tag slide.image.url
+      %span#responsiveFlag
+      / TODO: Slogan
+      .block-slogan
+        %h2 Welcome!
+        %div
+          %p
+            %a.link-1{href: "http://www.oswt.co.uk", target: "_blank"} Click here
+            for more info about this free website template created by TemplateMonster.com. This is a Bootstrap template that goes with several layout options (for desktop, tablet, smartphone landscape and portrait) to fit all popular screen resolutions. The PSD source files of this template are available for free for the registered members of TemplateMonster.com. Feel free to get them!
+#content.content-extra
+  .ic
+  .row-1
+    .container
+      .row
+        / TODO: else
+        - if @categories.present?
+          %ul.thumbnails.thumbnails-1
+            - @categories.each do |category|
+              %li.span3
+                .thumbnail.thumbnail-1
+                  %h3= category.name
+                  = image_tag category.image.url(:small)
+                  %section
+                    %strong= category.title
+                    %p= category.description
+                    = link_to 'Переглянути', [category, :products], class: 'btn btn-1'
+  .container
+    .row
+      %article.span6
+        %h3 Shortly about me
+        .wrapper
+          %figure.img-indent
+            %img{alt: "", src: "assets/page1-img5.jpg "}
+          .inner-1.overflow.extra
+            .txt-1 Sed ut perspictis unde omnis natus error volupatem accusantium doloue laudantium, totam rem.
+            Aperiam, eaque ipsa quae ab illo  veritatis et beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+            .border-horiz
+            .overflow
+              = double_columned_list @categories
+      / TODO: hardcoded
+      %article.span6
+        %h3 Latest photoshoots
+        %ul.list-photo
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img6.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img7.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img8.jpg "}
+          %li.last
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img9.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img10.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img11.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img12.jpg "}
+          %li.last
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img13.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img14.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img15.jpg "}
+          %li
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img16.jpg "}
+          %li.last
+            %a.magnifier{href: "assets/image-blank.png"}
+              %img{alt: "", src: "assets/page1-img17.jpg "}

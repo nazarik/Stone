@@ -1,0 +1,12 @@
+%h1 Slider
+
+- if @slider.image.exists?
+  %p
+    %b Image
+    %br
+  = image_tag @slider.image.url
+
+.form-actions
+  = link_to 'Back', admin_sliders_path, class: 'btn'
+  = link_to 'Edit', edit_admin_slider_path(@slider), class: 'btn'
+  = link_to 'Delete', admin_slider_path(@slider), method: 'delete', confirm: 'Are you sure?', class: 'btn btn-danger'

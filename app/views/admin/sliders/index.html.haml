@@ -1,0 +1,16 @@
+%h1 Sliders
+= link_to 'New', new_admin_slider_path, class: 'btn btn-primary' if @sliders.count < Slider::AMOUNT
+.row-fluid
+  %br
+  - if @sliders.present?
+    %ul#sliders.thumbnails
+      - @sliders.each do |slider|
+        %li.span4.pull-left
+          .thumbnail
+            = link_to image_tag(slider.image.url), admin_slider_path(slider)
+            .caption
+              %p.text-center
+                = link_to 'Edit', edit_admin_slider_path(slider), class: 'btn btn-primary'
+                = link_to 'Destroy', admin_slider_path(slider), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'
+  - else
+    .well.text-center No Sliders were created yet.
