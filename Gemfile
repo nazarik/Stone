@@ -9,7 +9,6 @@ gem 'dropbox'
 gem "paperclip-dropbox", ">= 1"
 gem 'devise'
 gem 'cancan'
-gem 'rmagick'
 
 group :production do
   gem 'pg'

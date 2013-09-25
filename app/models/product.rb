@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  RECENT_LIMIT = 12
+
   attr_accessible :description, :title, :category_id, :image
 
   belongs_to :category
@@ -10,4 +12,6 @@ class Product < ActiveRecord::Base
   validates_attachment :image, presence: true,
                                content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) },
                                size: { in: 0..10.megabytes }
+
+  scope :recent, -> { order('updated_at desc').limit(RECENT_LIMIT) }
 end

@@ -1,0 +1,19 @@
+%h1= "Looking on #{params[:watched].to_i.zero? ? 'un' : ''}read feedbacks"
+= link_to 'Already read feedbacks', admin_feedbacks_path(watched: 1), class: 'btn btn-primary'
+= link_to 'New feedbacks', admin_feedbacks_path(watched: 0), class: 'btn btn-primary'
+.clearfix
+%br
+- if @feedbacks.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Email
+    %tbody
+      - @feedbacks.each do |feedback|
+        %tr
+          %td= link_to feedback.name, admin_feedback_path(feedback)
+          %td= feedback.email
+          %td= link_to 'Destroy', admin_feedback_path(feedback), method: :delete, confirm: 'Are you sure?', class: 'btn btn-mini btn-danger'
+  - else
+    .well.text-center No Feedbacks were created yet.

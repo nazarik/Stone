@@ -1,0 +1,16 @@
+#content
+  .ic
+  .container
+    .row
+      %article.span12
+        %h3= t('.title')
+      .clear
+      - if @categories.present?
+        %ul.thumbnails.thumbnails-1.list-services
+          - @categories.each do |category|
+            %li.span4
+              .thumbnail.thumbnail-1
+                = image_tag category.image.url
+                %section
+                  = link_to category.title, category_products_path(category), class: 'link-1'
+                  %p= category.description

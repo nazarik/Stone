@@ -1,0 +1,53 @@
+uk:
+  activemodel:
+    errors:
+      messages:
+        blank: "Заповніть це поле"
+  activerecord:
+    attributes:
+      feedback:
+        email: 'Електронний адрес'
+    errors:
+      models:
+        member:
+      messages:
+        blank: "Заповніть це поле"
+        taken: "Цей %{attribute} вже існує"
+        confirmation: "Підтвердження %{attribute} не співпадає"
+        invalid: "Цей %{attribute} невалідний"
+  feedbacks:
+    index:
+      contact_us: 'Напишіть нам'
+      success_submit: "Ваш відгук вислано. Скоро з вами зв'яжуться."
+      contact_info: 'Як нас знайти'
+      phone: 'Телефон:'
+      email: 'E-mail:'
+      skype: 'Скайп:'
+    form:
+      submit: 'Вислати'
+      disabled_submit: 'Висилаю...'
+      clear: 'Очистити'
+      placeholders:
+        name: "Ваше ім'я"
+        phone: 'Номер телефону'
+        email: 'Електронна почта'
+        message: 'Повідомлення'
+  home_pages:
+    index:
+      welcome: 'Вітаємо!'
+      info_link_text: 'Перейдіть сюди'
+      info: "%{link} for more info about this free website template created by TemplateMonster.com. This is a Bootstrap template that goes with several layout options (for desktop, tablet, smartphone landscape and portrait) to fit all popular screen resolutions. The PSD source files of this template are available for free for the registered members of TemplateMonster.com. Feel free to get them!"
+      view: 'Переглянути продукцію'
+      about_title: 'Shortly about me'
+      about_subtitle: 'Sed ut perspictis unde omnis natus error volupatem accusantium doloue laudantium, totam rem.'
+      about_info: "Aperiam, eaque ipsa quae ab illo  veritatis et beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed"
+      latest_products: 'Останні вироби'
+  categories:
+    index:
+      title: 'Каталог'
+  shared:
+    navigation:
+      main: 'Головна'
+      categories: 'Каталог'
+      contact: 'Контакти'
+      services: 'Послуги'

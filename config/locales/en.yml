@@ -1,5 +1,49 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activemodel:
+    errors:
+      messages:
+        blank: "This field is required"
+  activerecord:
+    errors:
+      models:
+        member:
+      messages:
+        blank: "This field is required"
+        taken: "This %{attribute} has already been taken"
+        confirmation: "The %{attribute} confirmation does not match"
+        invalid: "This %{attribute} is invalid"
+  feedbacks:
+    index:
+      contact_us: 'Contact us'
+      success_submit: 'Contact form submitted! <strong>We will be in touch soon.</strong>'
+      contact_info: 'Contact info'
+      phone: 'Telephone:'
+      email: 'E-mail:'
+      skype: 'Skype:'
+    form:
+      submit: 'Send'
+      disabled_submit: 'Sending...'
+      clear: 'Clear'
+      placeholders:
+        name: 'Your name'
+        phone: 'Phone number'
+        email: 'Email address'
+        message: 'Message'
+  home_pages:
+    index:
+      welcome: 'Welcome'
+      info_link_text: 'Click here'
+      info: "%{link} for more info about this free website template created by TemplateMonster.com. This is a Bootstrap template that goes with several layout options (for desktop, tablet, smartphone landscape and portrait) to fit all popular screen resolutions. The PSD source files of this template are available for free for the registered members of TemplateMonster.com. Feel free to get them!"
+      view: 'View gallery'
+      about_title: 'Shortly about me'
+      about_subtitle: 'Sed ut perspictis unde omnis natus error volupatem accusantium doloue laudantium, totam rem.'
+      about_info: "Aperiam, eaque ipsa quae ab illo  veritatis et beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed"
+      latest_products: 'Latest products'
+  categories:
+    title: 'Categories'
+  shared:
+    navigation:
+      main: 'Main'
+      categories: 'Categories'
+      contact: 'Contact'
+      services: 'Services'

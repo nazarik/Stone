@@ -1,18 +1,7 @@
 .nav-collapse.nav-collapse_.collapse
   %ul.nav.sf-menu
-    = navigation_link 'Main', root_path
-    %li
-      %a{href: "index-1.html"} Services
-      %ul
-        %li
-          %a{href: "#"} Dolore
-        %li
-          %a{href: "#"} Consecte
-        %li
-          %a{href: "#"} Conseq
-    = navigation_link 'Categories', categories_path, resource: :products do
-      - Category.with_products
-    %li
-      %a{href: "index-3.html"} Blog
-    %li
-      %a{href: "index-4.html"} Contact
+    = navigation_link t('.main'), root_path
+    = navigation_link t('.services'), '#'
+    = navigation_link t('.categories'), categories_path, resource: :products do
+      - @categories
+    = navigation_link t('.contact'), feedbacks_path

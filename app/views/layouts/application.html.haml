@@ -1,5 +1,5 @@
 !!!
-%html(lang="en")
+%html{lang: I18n.locale}
   %head
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
@@ -8,8 +8,8 @@
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
-    %link{href: "assets/favicon.ico", rel: "icon", type: "image/x-icon"}
-    %link{href: "assets/favicon.ico", rel: "shortcut icon", type: "image/x-icon"}
+    = yield :head
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     %meta{content: "Your description", name: "description"}
     %meta{content: "Your keywords", name: "keywords"}
     %meta{content: "Your name", name: "author"}
@@ -21,6 +21,7 @@
       <link rel="stylesheet" href="ie.css" type="text/css" media="screen">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+
   %body
     .spinner
     %header

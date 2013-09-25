@@ -31,7 +31,8 @@
             %ul.nav
               %li= link_to "Categories", admin_categories_path
               %li= link_to "Products", admin_products_path
-              %li= link_to "Sliders", admin_sliders_path
+              %li= link_to "Slides", admin_sliders_path
+              %li= link_to "Feedbacks", admin_feedbacks_path
             %ul.nav.pull-right
               - if current_user
                 %li
@@ -47,6 +48,3 @@
         .alert.alert-error
           = flash[:alert]
       = yield
-
-      %footer
-        %p &copy; Company 2013

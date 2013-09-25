@@ -21,7 +21,7 @@ private
     temp_file = image.queued_for_write[:original]
     unless temp_file.nil?
       dimensions = Paperclip::Geometry.from_file(temp_file)
-      errors.add(:image, 'Dimension should be 350x350')  if dimensions.width != 350 && dimensions.height != 350
+      errors.add(:image, 'Dimension should be 350x350 px')  if dimensions.width != 350 && dimensions.height != 350
     end
   end
 end

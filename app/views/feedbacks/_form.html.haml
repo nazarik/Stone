@@ -1,0 +1,9 @@
+= simple_form_for @feedback, html: { id: 'contact-form' }, remote: true do |f|
+  %fieldset
+    = f.input :name, label: false, placeholder: t('.placeholders.name')
+    = f.input :phone, label: false, placeholder: t('.placeholders.phone')
+    = f.input :email, label: false, placeholder: t('.placeholders.email')
+    = f.input :message, as: :text, label: false, placeholder: t('.placeholders.message')
+  .buttons-wrapper
+    = link_to t('.clear'), '#', class: 'btn btn-1', id: 'clear-feedback'
+    = f.submit t('.submit'), class: 'btn btn-1', data: { disable_with: t('.disabled_submit') }

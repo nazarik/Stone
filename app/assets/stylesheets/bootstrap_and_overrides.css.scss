@@ -9,9 +9,10 @@
 // $bodyBackground: #f5f5f5;
 
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #7f7f7f;
@@ -20,6 +21,11 @@ body {
 a {
   color: #e85356;
   text-decoration: none;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
 }
 
 .form-signin {
@@ -153,7 +159,7 @@ header {
   -moz-box-shadow: none;
   box-shadow: none;
   text-transform: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 22px;
   text-align: center;
@@ -226,6 +232,7 @@ header {
   display: block;
   background: none;
 }
+.nav-collapse_ .nav > li > ul li.active > a,
 .nav-collapse_ .nav > li > ul li > a:hover,
 .nav-collapse_ .nav > li > ul li.sfHover > a {
   text-decoration: none;
@@ -448,20 +455,20 @@ p {
   width: 170px;
   padding-top: 5px;
 }
-.list-pad {
-  padding-right: 28px;
-}
 .list {
+  width: 212px;
+  overflow: hidden;
   list-style: none outside;
   padding-top: 14px;
   float: left;
-  width: 106px;
   margin: 0;
 }
 .list li {
   background: image-url('marker-1.png') no-repeat 0 7px;
   padding-left: 10px;
   padding-bottom: 10px;
+  width: 45%;
+  float: left
 }
 .list li.last {
   padding-bottom: 0;
@@ -611,12 +618,9 @@ p {
 .map {
   margin: 0 0 25px;
   padding-top: 10px;
-  line-height: 0;
-}
-.map iframe {
-  border: none;
-  width: 100%;
   height: 370px;
+  width: 100%;
+  border: none;
 }
 /*------ mail & address------- */
 .address-1 {
@@ -655,64 +659,89 @@ p {
   z-index: 1;
   margin: 0 0 20px;
   padding-top: 10px;
+
+  fieldset {
+    border: none;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  label {
+    display: inline-block;
+    min-height: 40px;
+    position: relative;
+    margin: 0;
+  }
+
+  textarea, input:not([type=submit]) {
+    font-family: 'Open Sans', sans-serif;
+    padding: 4px 18px 5px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px !important;
+    color: #7f7f7f;
+    background: #ffffff;
+    outline: none;
+    width: 370px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  input {
+    height: 30px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 323px;
+    resize: none;
+    overflow: auto;
+  }
+
+  textarea:focus, input:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .message {
+    min-height: 343px;
+    width: 100%;
+  }
+
+  .help-inline {
+    float: none;
+    color: #f00;
+    font-size: 11px;
+    line-height: 1.27em;
+    overflow: hidden;
+    margin-bottom: 5px;
+    padding: 10px 4px 6px 4px;
+    text-transform: none;
+    display: block;
+  }
+
+  .buttons-wrapper {
+    position: relative;
+
+    a {
+      margin-right: 10px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
-#contact-form fieldset {
-  border: none;
-  padding: 0;
-  width: 100%;
-  overflow: hidden;
-}
-#contact-form label {
-  display: inline-block;
-  min-height: 40px;
-  position: relative;
-  margin: 0;
-}
-#contact-form .message {
-  min-height: 343px;
-  width: 100%;
-}
-#contact-form input,
-#contact-form textarea {
-  font-family: 'Open Sans', sans-serif;
-  padding: 4px 18px 5px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 21px !important;
-  color: #7f7f7f;
-  background: #ffffff;
-  outline: none;
-  width: 370px;
-  border: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#contact-form input {
-  height: 30px;
-}
-#contact-form input:focus,
-#contact-form textarea:focus {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-#contact-form .area .error {
-  float: none;
-}
-#contact-form textarea {
-  width: 100%;
-  height: 323px;
-  resize: none;
-  overflow: auto;
-}
-#contact-form .success {
+
+.success {
+  // TODO
   display: none;
   margin-bottom: 20px;
   color: #000000;
@@ -722,27 +751,6 @@ p {
   background: #ffffff;
   padding: 12px 14px;
   text-transform: none;
-}
-#contact-form .error,
-#contact-form .empty {
-  color: #f00;
-  font-size: 11px;
-  line-height: 1.27em;
-  display: none;
-  overflow: hidden;
-  margin-bottom: 5px;
-  padding: 2px 4px 6px 4px;
-  text-transform: none;
-}
-.buttons-wrapper {
-  position: relative;
-}
-.buttons-wrapper a {
-  margin-right: 10px;
-  cursor: pointer;
-}
-.buttons-wrapper a:hover {
-  text-decoration: none;
 }
 /*----------- buttons & links--------------*/
 .btn-1 {
@@ -946,12 +954,14 @@ footer {
   .img-indent1 img {
     width: 100%;
   }
-  #contact-form label {
-    display: block;
-  }
-  #contact-form input,
-  #contact-form textarea {
-    width: 100%;
+  #contact-form {
+    input:not([type=submit]), textarea {
+      width: 100%;
+    }
+
+    label {
+      display: block;
+    }
   }
   .inner-1 {
     padding: 0;
@@ -1006,9 +1016,10 @@ footer {
   .img-indent img {
     width: 100%;
   }
-  #contact-form input,
-  #contact-form textarea {
-    width: 100%;
+  #contact-form {
+    input:not([type=submit]), textarea {
+      width: 100%;
+    }
   }
   #form-search input {
     width: 74%;
@@ -1094,12 +1105,11 @@ footer {
   .nav-collapse_ .nav li a {
     display: block;
     font-weight: normal;
-    padding: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     width: 100%;
-    padding: 8px 0;
+    padding: 15px 0;
     font-weight: normal;
   }
   .nav-collapse_ .nav > li.sfHover,
@@ -1116,6 +1126,9 @@ footer {
     text-decoration: none;
     color: #ffffff;
     background: #e85356;
+  }
+  .nav-collapse_ .nav > li > a .sf-sub-indicator {
+    bottom: 7px;
   }
   .sub-menu > a {
     position: relative;
@@ -1257,9 +1270,6 @@ footer {
   #contact-form textarea {
     height: 280px;
   }
-  #contact-form .message {
-    min-height: 290px;
-  }
 }
 @media (max-width: 320px) {
   .brand_ a img {
@@ -1319,4 +1329,3 @@ footer {
 }
 
 
-@import "bootstrap-responsive";

@@ -1,0 +1,38 @@
+- content_for :head do
+  %script{type: 'text/javascript', src: "https://maps.googleapis.com/maps/api/js?sensor=false&language=#{I18n.locale}"}
+#content
+  .ic
+  .container
+    .row
+      %article.span8
+        %h3= t('.contact_us')
+        #feedback.inner-1
+          .success= t('.success_submit')
+          .form-wrapper
+            = render 'form'
+      %article.span4
+        %h3= t('.contact_info')
+        #map_canvas.map
+        / TODO: configurable and localize
+        %address.address-1
+          %strong
+            Grewis
+            %br/
+            8901 Marmora Road
+            %br/
+            Glasgow, D04 89GR.
+          .overflow
+            %span> Freephone:
+            +1 800 559 6580
+            %br/
+            = succeed "+1" do
+              %span= t('.phone')
+            %br/
+            = succeed "+1" do
+              %span FAX:
+            %br/
+            %span= t('.email')
+            %a.mail-1{href: "#"} mail@demolink.org
+            %br/
+            %span= t('.skype')
+            %a.mail-1{href: "#"} @skypename

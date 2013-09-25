@@ -8,9 +8,32 @@
 #= require superfish
 #= require touchTouch.jquery
 #= require jquery.browser.min
+#= require bootstrap
 
 if $(window).width() > 1024
   document.write("<script src='/assets/jquery.preloader.js'></script>")
+
+$ ->
+  if $('#map_canvas').length > 0
+    coords = new google.maps.LatLng(49.850173, 23.889424)
+    myOptions = {
+      zoom: 12,
+      center: coords ,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      streetViewControl: false
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions)
+    new google.maps.Marker({
+      position: coords,
+      map: map,
+      optimized: false
+    })
+
+  if $('#contact-form').length > 0
+    $('#clear-feedback').on 'click', (e) ->
+      e.preventDefault()
+      $('#contact-form').find('input:not([type=hidden]):not([type=submit]), textarea').val ->
+        this.value = ''
 
 $(window).load ->
   windowWidth = $(window).width()

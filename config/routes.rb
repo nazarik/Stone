@@ -1,5 +1,4 @@
 Rock::Application.routes.draw do
-
   devise_for :users
 
   devise_scope :user do
@@ -10,6 +9,7 @@ Rock::Application.routes.draw do
     resources :categories
     resources :products
     resources :sliders
+    resources :feedbacks, only: [:index, :show, :destroy]
   end
 
   resources :home_pages, only: [:index]
@@ -17,6 +17,8 @@ Rock::Application.routes.draw do
   resources :categories, only: [:index] do
     resources :products, only: [:index]
   end
+
+  resources :feedbacks, only: [:index, :new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
