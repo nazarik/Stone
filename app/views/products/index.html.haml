@@ -8,4 +8,8 @@
       %ul.portfolio.clearfix
         - @products.each do |product|
           %li.box
-            = link_to image_tag(product.image.url(:medium)), product.image.url, class: 'magnifier'
+            .wrapper
+              = link_to image_tag(product.image.url(:medium)), product.image.url, class: 'magnifier', rel: 'tooltip', title: product.title
+              - if product.title.present?
+                %section
+                  %p= product.title

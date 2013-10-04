@@ -1,15 +1,23 @@
 %h1 Products
-= link_to 'New', new_admin_product_path, class: 'btn btn-primary'
+.row
+  .span4
+    = link_to 'New', new_admin_product_path, class: 'btn btn-primary'
+  .span8
+    = form_tag admin_products_path, method: :get, class: 'form-inline pull-right', id: 'category-filter' do
+      = select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]), prompt: "All Categories", class: 'span3'
 - if @products.present?
   %table.table.table-striped
     %thead
       %tr
         %th Title
+        %th Category
     %tbody
       - @products.each do |product|
         %tr
           %td= link_to product.title, admin_product_path(product)
+          %td= product.category_name
           %td
+            = link_to 'Show', admin_product_path(product), class: 'btn btn-mini'
             = link_to 'Edit', edit_admin_product_path(product), class: 'btn btn-mini'
             = link_to 'Destroy', admin_product_path(product), method: :delete, confirm: 'Are you sure?', class: 'btn btn-mini btn-danger'
   - else

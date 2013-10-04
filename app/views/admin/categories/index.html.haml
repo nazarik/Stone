@@ -1,5 +1,7 @@
 %h1 Categories
-= link_to 'New', new_admin_category_path, class: 'btn btn-primary'
+.row
+  .span4
+    = link_to 'New', new_admin_category_path, class: 'btn btn-primary'
 - if @categories.present?
   %table.table.table-striped
     %thead

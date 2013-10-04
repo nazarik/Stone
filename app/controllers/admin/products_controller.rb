@@ -2,7 +2,7 @@ class Admin::ProductsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @products = Product.all
+    @products = Product.filter_by_category(params[:category_id])
   end
 
   def new
@@ -22,7 +22,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes params[:product]
-      flash[:notice] = "Successfully updated product"
+      flash[:notice] = "Succeallssfully updated product"
       redirect_to [:admin, @product]
     else
       render :edit

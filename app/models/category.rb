@@ -4,7 +4,8 @@ class Category < ActiveRecord::Base
   has_many :products
 
   has_attached_file :image, styles: { small: '270x146#' },
-                            path: ':class/:attachment/:id/:style/:filename'
+                            url: '/images/:class/:attachment/:id/:style/:filename',
+                            path: ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
 
 
   validates :name, :description, :title, presence: true
@@ -13,7 +14,7 @@ class Category < ActiveRecord::Base
                                size: { in: 0..10.megabytes }
   validate :image_dimensions
 
-  scope :with_products, -> { joins(:products).where('products.id IS NOT NULL') }
+  scope :with_products, -> { includes(:products).where('products.id IS NOT NULL') }
 
 private
 

@@ -22,17 +22,14 @@
             %br/
             Glasgow, D04 89GR.
           .overflow
-            %span> Freephone:
+            %span> Київстар:
             +1 800 559 6580
             %br/
-            = succeed "+1" do
-              %span= t('.phone')
-            %br/
-            = succeed "+1" do
-              %span FAX:
-            %br/
-            %span= t('.email')
-            %a.mail-1{href: "#"} mail@demolink.org
+            %span> Лайф:
+            +1 800 559 6580
             %br/
             %span= t('.skype')
-            %a.mail-1{href: "#"} @skypename
+            = link_to '@skypename', 'javascript:void()', class: 'mail-1'
+            %br/
+            %span= t('.email')
+            = mail_to 'kameneobrobka@gmail.com', nil, encode: "hex"

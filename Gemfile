@@ -5,8 +5,8 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'haml', '~> 3.1.7'
 gem 'paperclip', '~> 3.0'
-gem 'dropbox'
-gem "paperclip-dropbox", ">= 1"
+# gem 'dropbox'
+# gem "paperclip-dropbox", ">= 1"
 gem 'devise'
 gem 'cancan'
 

@@ -66,7 +66,7 @@ module Rock
     config.assets.version = '1.0'
 
     # For heroku
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
 
     # Default genereators
     config.generators do |g|
@@ -76,9 +76,9 @@ module Rock
     end
 
     # Paperclip defaults
-    config.paperclip_defaults = {
-      storage: :dropbox,
-      dropbox_credentials: Rails.root.join("config/dropbox.yml")
-    }
+    # config.paperclip_defaults = {
+    #   storage: :dropbox,
+    #   dropbox_credentials: Rails.root.join("config/dropbox.yml")
+    # }
   end
 end

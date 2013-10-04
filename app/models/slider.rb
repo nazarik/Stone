@@ -3,7 +3,8 @@ class Slider < ActiveRecord::Base
 
   attr_accessible :image
 
-  has_attached_file :image, path: ':class/:attachment/:id/:style/:filename'
+  has_attached_file :image, url: '/images/:class/:attachment/:id/:style/:filename',
+                            path: ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
 
   validates_attachment :image, presence: true,
                                content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) },
