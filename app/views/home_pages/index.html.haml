@@ -12,7 +12,7 @@
       .block-slogan
         %h2= t('.welcome')
         %div
-          %p= t('.info', link: link_to(t('.info_link_text'), '#', target: '_blank', class: 'link-1')).html_safe
+          %p!= t('.info', link: link_to(t('.info_link_text'), '#', target: '_blank', class: 'link-1'))
 #content.content-extra
   .ic
   .row-1
@@ -20,7 +20,7 @@
       .row
         / TODO: else
         - if @categories.present?
-          %ul.thumbnails.thumbnails-1
+          %ul.thumbnails.thumbnails-1.bxslider
             - @categories.each do |category|
               %li.span3
                 .thumbnail.thumbnail-1

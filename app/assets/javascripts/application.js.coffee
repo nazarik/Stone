@@ -8,7 +8,9 @@
 #= require superfish
 #= require touchTouch.jquery
 #= require jquery.browser.min
+#= require jcarousellite_1.0.1.min
 #= require bootstrap
+#= require_tree ./public
 
 if $(window).width() > 1024
   document.write("<script src='/assets/jquery.preloader.js'></script>")

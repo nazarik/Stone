@@ -356,6 +356,15 @@ p {
   overflow:hidden;
   padding:0
 }
+// #content-carousel {
+//   position: relative;
+//   overflow: hidden;
+//   // height: 100px;
+//   ul {
+//     position: absolute;
+//     width: 100%;
+//   }
+// }
 /*------ thumbnails-1 ------- */
 .thumbnails-1 {
   margin: 0;
@@ -363,6 +372,7 @@ p {
 }
 .thumbnails-1 > li {
   margin-bottom: 40px;
+  margin-left: 0;
 }
 .thumbnails-1 .thumbnail-1 {
   border: none;
@@ -1199,7 +1209,8 @@ footer {
   .thumbnails-1 li {
     float: left;
     width: 45%;
-    margin-left: 20px;
+    // margin-left: 20px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 640px) {
