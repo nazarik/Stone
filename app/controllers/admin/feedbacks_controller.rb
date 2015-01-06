@@ -2,7 +2,7 @@ class Admin::FeedbacksController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @feedbacks = Feedback.already_seen(params[:watched].to_i)
+    @feedbacks = Feedback.already_seen(params[:watched])
   end
 
   def show

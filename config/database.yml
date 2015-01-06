@@ -1,19 +1,19 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   database: rock_dev
-  username: root
+  username: nazar
   pool: 5
   timeout: 5000
 
 test:
-  adapter: mysql2
+  adapter: postgresql
   database: rock_test
-  username: root
+  username: nazar
   pool: 5
   timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: rock_prod
   username: root
   pool: 5
